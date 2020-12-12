@@ -8,10 +8,10 @@ import {
   Dimensions,
   StyleSheet,
 } from "react-native";
-import ajax from "../ajax";
-import DealList from "./DealList";
-import DealDetail from "./DealDetail";
-import SearchBar from "./SearchBar";
+import ajax from "./src/ajax";
+import DealList from "./src/components/DealList";
+import DealDetail from "./src/components/DealDetail";
+import SearchBar from "./src/components/SearchBar";
 
 class App extends React.Component {
   titleXPos = new Animated.Value(0);
@@ -78,6 +78,7 @@ class App extends React.Component {
         </View>
       );
     }
+
     const dealsToDisplay =
       this.state.dealsFromSearch.length > 0
         ? this.state.dealsFromSearch
@@ -94,6 +95,7 @@ class App extends React.Component {
         </View>
       );
     }
+
     return (
       <Animated.View style={[{ left: this.titleXPos }, styles.container]}>
         <Text style={styles.header}>Bakesale</Text>
